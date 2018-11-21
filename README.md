@@ -1,2 +1,7 @@
-# ken-piece
-The piece of Ken.
+#记录各种零碎内容
+
+###Lombok的使用
+
+###自定义枚举Valid
+
+###编译期注解
