@@ -13,6 +13,14 @@ Class: User(e.)
 Class: OkhttpUtils
 Reference: [Okhttp3基本使用](https://www.jianshu.com/p/da4a806e599b)
 
+###Swagger2
+
+Class: SwaggerConfig
+
+###Redis
+
+Class: RedisConfig,RedisServiceImpl
+
 ###共通类
 
 * CharacterUtils 字符共通类
