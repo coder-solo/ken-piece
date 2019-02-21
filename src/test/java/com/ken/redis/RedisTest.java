@@ -53,7 +53,7 @@ public class RedisTest {
 		Assert.assertEquals("testString", stringRedisTemplate.opsForValue().get("strRt"));
 
 		// redisTemplate
-		User user = new User("code", "Ken");
+		User user = User.builder().code("code").name("Ken").build();
 		ValueOperations<String, User> operations = redisTemplate.opsForValue();
 		operations.set("userExist", user);
 		operations.set("userExistTmp", user, 1, TimeUnit.SECONDS);

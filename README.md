@@ -20,6 +20,14 @@ Class: SwaggerConfig
 ### Redis
 
 Class: RedisConfig,RedisServiceImpl
+File: application.yml
+Test: RedisTest,Swagger-RedisController
+
+### Shrio
+
+Class: PieceShiroConfig,PieceShiroRealm,PieceController
+Test: Swagger-PieceController
+
 
 ### 共通类
 
