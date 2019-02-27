@@ -28,6 +28,12 @@ Test: RedisTest,Swagger-RedisController
 Class: PieceShiroConfig,PieceShiroRealm,PieceController
 Test: Swagger-PieceController
 
+### 设计
+
+#### 代理模式
+
+Class: StaticProxySubject,StaticProxySubject
+Test: ProxyTest
 
 ### 共通类
 
