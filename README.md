@@ -28,6 +28,8 @@ Test: RedisTest,Swagger-RedisController
 Class: PieceShiroConfig,PieceShiroRealm,PieceController
 Test: Swagger-PieceController
 
+### actuator
+
 ### 设计
 
 #### 代理模式
