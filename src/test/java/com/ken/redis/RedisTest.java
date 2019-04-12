@@ -1,3 +1,4 @@
+/*
 package com.ken.redis;
 
 import java.util.concurrent.TimeUnit;
@@ -92,3 +93,4 @@ public class RedisTest {
 
 	}
 }
+*/
