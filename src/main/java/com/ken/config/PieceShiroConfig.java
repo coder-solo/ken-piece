@@ -39,13 +39,13 @@ public class PieceShiroConfig {
          * authc:所有url都必须认证通过才可以访问; anon:所有url都都可以匿名访问
          */
         filterChainDefinitionMap.put("/", "anon");
+        filterChainDefinitionMap.put("/**", "anon");
         filterChainDefinitionMap.put("/shiro/login", "anon");
         filterChainDefinitionMap.put("/swagger-ui.html", "anon");
         filterChainDefinitionMap.put("/webjars/**", "anon");
         filterChainDefinitionMap.put("/swagger-resources/**", "anon");
         filterChainDefinitionMap.put("/v2/api-docs/**", "anon");
         filterChainDefinitionMap.put("/shiro/**", "authc");
-        filterChainDefinitionMap.put("/**", "anon");
         shiroFilterFactoryBean.setFilterChainDefinitionMap(filterChainDefinitionMap);
         return shiroFilterFactoryBean;
     }

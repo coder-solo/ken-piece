@@ -22,6 +22,7 @@ Class: SwaggerConfig
 Class: RedisConfig,RedisServiceImpl
 File: application.yml
 Test: RedisTest,Swagger-RedisController
+ps:不开启redis影响编译运行，代码已注释，需要的自己打开。
 
 ### Shrio
 
@@ -29,6 +30,8 @@ Class: PieceShiroConfig,PieceShiroRealm,PieceController
 Test: Swagger-PieceController
 
 ### actuator
+
+http://127.0.0.1:37927/actuator/prometheus
 
 ### 设计
 
