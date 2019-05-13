@@ -41,6 +41,10 @@ Test: ProxyTest
 
 * CharacterUtils 字符共通类
 
+### 零碎组件
+
+* PinyinTest 拼音测试类
+
 ### 有意思的代码
 
 * Null 空对象的参数
