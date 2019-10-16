@@ -1,4 +1,3 @@
-/*
 package com.ken.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,4 +22,3 @@ public class RedisController {
 		return redisService.getName(code);
 	}
 }
-*/
