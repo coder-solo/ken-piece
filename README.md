@@ -44,3 +44,4 @@ Test: ProxyTest
 ### 有意思的代码
 
 * Null 空对象的参数
+* Builder 创建对象
