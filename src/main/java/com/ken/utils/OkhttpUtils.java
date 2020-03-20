@@ -1,14 +1,9 @@
 package com.ken.utils;
 
 import java.io.IOException;
+import java.io.InputStream;
 
-import okhttp3.Call;
-import okhttp3.Callback;
-import okhttp3.MediaType;
-import okhttp3.OkHttpClient;
-import okhttp3.Request;
-import okhttp3.RequestBody;
-import okhttp3.Response;
+import okhttp3.*;
 
 public class OkhttpUtils {
 
@@ -84,6 +79,25 @@ public class OkhttpUtils {
 		// call.execute 阻塞方式
 		try (Response response = call.execute()) {
 			result = response.body().string();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		return result;
+	}
+
+	public static String download(String url, String targetDir) {
+
+		OkHttpClient client = new OkHttpClient.Builder().build();
+		// 注：User-Agent为ip.taobao接口所必须内容，其他接口不需要
+		Request request = new Request.Builder().url(url).addHeader("User-Agent", "").build();
+		Call call = client.newCall(request);
+
+		String result = null;
+		// call.execute 阻塞方式
+		try (Response response = call.execute()) {
+			ResponseBody body = response.body();
+			InputStream is = body.byteStream();
+			// TODO
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
