@@ -1,0 +1,29 @@
+@startuml
+
+title JPA初始化时序图
+
+JpaRepositoriesAutoConfiguration -> JpaRepositoriesAutoConfigureRegistrar: @Import
+
+JpaRepositoriesAutoConfigureRegistrar -> RepositoryConfigurationDelegate: registerBeanDefinitions
+note right
+new RepositoryConfigurationDelegate(getConfigurationSource(), this.resourceLoader,
+        this.environment).registerRepositoriesIn(registry,
+                getRepositoryConfigurationExtension());
+end note
+
+RepositoryConfigurationDelegate -> RepositoryConfigurationDelegate: registerRepositoriesIn
+note right
+registerRepositoriesIn 方法获取所有的dao，解析为bean，并放入spring注册工厂中，等待spring调用
+end note
+
+JpaRepositoriesAutoConfigureRegistrar -> JpaRepositoryFactoryBean: getRepositoryFactoryClassName
+
+JpaRepositoryFactoryBean -> JpaRepositoryFactory: createRepositoryFactory
+
+JpaRepositoryFactory -> QueryExecutorMethodInterceptor: getRepository
+note right
+getRepository 解析dao中的方法，解析为对应的RepositoryQuery
+此时所有dao对应的方法均解析完毕，等待sql调用使用
+end note
+
+@enduml
